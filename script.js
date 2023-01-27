@@ -22,7 +22,8 @@ function playGame(playerChoice, compChoice){
     }
     if(playerChoice == 'ROCK'){
         if(compChoice == 'PAPER'){
-            alert('Computer chose Paper, You Lost!')
+            alert('Computer chose Paper, You Lost!');
+            playerWon = "COMP";
         }
         else if(compChoice == 'SCISSORS'){
             alert('Computer chose Scissors, You Won!');
@@ -31,7 +32,8 @@ function playGame(playerChoice, compChoice){
     }
     if(playerChoice == 'PAPER'){
         if(compChoice == 'SCISSORS'){
-            alert('Computer chose Paper, You Lost!')
+            alert('Computer chose Paper, You Lost!');
+            playerWon = "COMP";
         }
         else if(compChoice == 'ROCK'){
             alert('Computer chose Scissors, You Won!');
@@ -40,7 +42,8 @@ function playGame(playerChoice, compChoice){
     }
     if(playerChoice == 'SCISSORS'){
         if(compChoice == 'ROCK'){
-            alert('Computer chose Paper, You Lost!')
+            alert('Computer chose Paper, You Lost!');
+            playerWon = "COMP";
         }
         else if(compChoice == 'PAPER'){
             alert('Computer chose Scissors, You Won!');
@@ -54,11 +57,24 @@ function game(){
     let playerWins = 0;
     let compWins = 0;
     for(let i =0; i < 5; i++){
-        if(playGame() == "PLAYER"){
+        let gameRound = playGame();
+        if(gameRound  == "PLAYER"){
             playerWins++;
         }
-        else{
+        else if(gameRound  == "COMP"){
             compWins++;
         }
     }
+    alert("Score was Player: " + playerWins + " and Computer: " + compWins);
+    if(playerWins > compWins){
+        alert("You won!");
+    }
+    else if(compWins > playerWins){
+        alert("You lost...");
+    }
+    else{
+        alert("It's a Tie!");
+    }
 }
+
+game();
