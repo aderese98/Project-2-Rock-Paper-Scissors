@@ -16,7 +16,7 @@ function playGame(playerChoice, compChoice){
     compChoice = getComputerChoice().toUpperCase();
     let playerWon = "";
     if(playerChoice == compChoice){
-        alert('You both chose ' + playerChoice +
+        alert('You both picked ' + playerChoice +
               ", It's a Tie!");
         playerWon = "TIE";
     }
