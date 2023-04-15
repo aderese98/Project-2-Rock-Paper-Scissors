@@ -7,7 +7,6 @@ function getComputerChoice(){
 }
 
 function getPlayerChoice(){
-    let playerChoice = prompt("Type Rock, Paper, or Scissors.");
     return playerChoice;
 }
 
@@ -52,29 +51,3 @@ function playGame(playerChoice, compChoice){
     }
     return playerWon;
 }
-
-function game(){
-    let playerWins = 0;
-    let compWins = 0;
-    for(let i =0; i < 5; i++){
-        let gameRound = playGame();
-        if(gameRound  == "PLAYER"){
-            playerWins++;
-        }
-        else if(gameRound  == "COMP"){
-            compWins++;
-        }
-    }
-    alert("Score was Player: " + playerWins + " and Computer: " + compWins);
-    if(playerWins > compWins){
-        alert("You won!");
-    }
-    else if(compWins > playerWins){
-        alert("You lost...");
-    }
-    else{
-        alert("It's a Tie!");
-    }
-}
-
-game();
